@@ -1,2 +1,21 @@
-<h1>FileRecords#index</h1>
-<p>Find me in app/views/file_records/index.html.erb</p>
+<%= link_to "New File Record", new_file_record_path %>
+<br />
+<br />
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Download link</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  </tbody>
+    <% @file_records.each do |file_record|%>
+      <tr>
+        <td><%= file_record.description %></td>
+        <td><%= link_to "Download file"%></td>
+        <td><%= batton_to "Delete", file_record, method: :delete%></td>
+      </tr> 
+    <% end %>  
+  </tbody>
+</table>

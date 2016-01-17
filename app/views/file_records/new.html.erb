@@ -1,2 +1,9 @@
-<h1>FileRecords#new</h1>
-<p>Find me in app/views/file_records/new.html.erb</p>
+<div>
+  <%= form_for @file_record, html: {multipart: true} do |f|%>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <%= f.label :attachment %>
+    <%= f.file_field :attachment %>
+    <%= f.submit "Save" %>
+  <% end %>  
+</div>
