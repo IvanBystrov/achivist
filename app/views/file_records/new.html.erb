@@ -1,3 +1,12 @@
+<% if !@file_record.errors.empty?%>
+  <div>
+    <ul>
+      <% @file_record.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>  
+    </ul>    
+  </div>
+<% end %>  
 <div>
   <%= form_for @file_record, html: {multipart: true} do |f|%>
     <%= f.label :description %>
