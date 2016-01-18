@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  ActiveAdmin.routes(self)
   resources :file_records, only: [:index, :new, :create, :destroy]
   root 'file_records#index'
   
